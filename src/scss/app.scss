@@ -1,0 +1,134 @@
+@import 'reset';
+html{
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	min-width: 880px;
+}
+.nojs{
+	.warning{
+		width:calc(100% - 40px);
+		color:#76E6FA;
+		background-color: rgba(0, 0, 0, .7);
+		padding: 20px;
+		font-size: 1.5em;
+		font-weight: 300;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height: 100vh;
+	}
+
+	.warning p{
+		line-height: 70px;
+	}
+
+	.warning__link{
+		display:inline-block;
+		color: white;
+		background-color: #DF6BFA;
+		border-radius: 0.25em;
+		padding:0 1em;
+		margin-left: 20px;
+	}
+	.header, .game{
+		display:none;
+	}
+}
+
+.js{
+	.warning{
+		display:none;
+	}
+	body{
+		width: 100%;
+		height: 100vh;
+		background-color: lightgrey;
+		color: white; //juste for seeing need to delete that after//
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+	}
+
+	.hidden{
+		display: none;
+		height:0;
+		width:0;
+		text-indent: -99999px;
+	}
+
+	.header{
+		width:calc(100% - 100px);
+		background-color: #000;
+		padding: 15px 50px 15px ;
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		}
+
+		.header__title{
+		font-size:2.6em;
+		filter:brightness(200%);
+		overflow: hidden;
+		background-color:black;
+		line-height:1.4em;
+		padding:0 0.3em;
+	}
+
+	.yourscore{
+		padding: 0 0.9em;
+	}
+
+	.score{
+		letter-spacing: 0.125em;
+	}
+
+	.header__title::before{
+		content:'T-rex game';
+		font-size:1em;
+		position: absolute;
+		mix-blend-mode: difference;
+		filter: blur(2px);
+	}
+
+	.header__title,
+	.header__title::before{
+		font-weight: 600;
+	}
+	
+	.dotted{
+		position:absolute;
+		background: radial-gradient(circle, #F9FF0A, black 40%) center/28% 22%;
+		width:500px;
+		height:500px;
+		top:-500px;
+		left:-300px;
+		mix-blend-mode:color-dodge;
+		animation: slide 2s linear infinite;
+	}
+@keyframes slide {
+    to {
+        transform: translate(100%,25%);
+    }
+}
+
+	.header__player:not(:first-child){
+		padding-left:10px;
+	}
+	.game{
+		height: calc(100% - 118px);
+		width:90%;
+		margin: 0 auto;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+	.game__title_hidden{
+		height:0;
+		width:0;
+		text-indent: -99999px;
+	}
+	.game__canvas{
+		margin-top:10px;
+		margin-bottom: 10px;
+		background-color: rgba(255,255,255,1);
+	}
+}
+
+	
